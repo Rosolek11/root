@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f3fff3;
+  color: #1b1b1b;
+}
+
+.todo-app {
+  width: min(860px, calc(100% - 32px));
+  margin: 24px auto;
+  padding: 20px;
+  border: 1px solid #b9d8b9;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 28px;
+}
+
+.search-input,
+.add-task-form input,
+.add-task-form button,
+.task-edit-text,
+.task-edit-date {
+  font: inherit;
+}
+
+.search-input {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border: 1px solid #95b695;
+  border-radius: 8px;
+}
+
+.tasks-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid #d5e6d5;
+  border-radius: 8px;
+  background: #fbfffb;
+}
+
+.task-item + .task-item {
+  margin-top: 10px;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.task-text {
+  overflow-wrap: anywhere;
+}
+
+.task-due {
+  color: #4f5f4f;
+  font-size: 14px;
+}
+
+mark {
+  background: #fff0a8;
+  padding: 0;
+}
+
+.delete-btn {
+  border: 1px solid #c86565;
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: #ffe6e6;
+  color: #7a1a1a;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #ffd2d2;
+}
+
+.add-task-form {
+  display: grid;
+  grid-template-columns: 1fr 220px auto;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.add-task-form input,
+.add-task-form button,
+.task-edit-text,
+.task-edit-date {
+  padding: 10px 12px;
+  border: 1px solid #95b695;
+  border-radius: 8px;
+}
+
+.add-task-form button {
+  border-color: #5a9a5a;
+  background: #d8f2d8;
+  cursor: pointer;
+}
+
+.add-task-form button:hover {
+  background: #c8ebc8;
+}
+
+.form-error {
+  min-height: 20px;
+  margin: 10px 0 0;
+  color: #b32323;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.task-edit-wrap {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 10px;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .add-task-form {
+    grid-template-columns: 1fr;
+  }
+
+  .task-item {
+    grid-template-columns: 1fr;
+  }
+
+  .task-edit-wrap {
+    grid-template-columns: 1fr;
+  }
+}

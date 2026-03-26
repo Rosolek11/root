@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jakub Rossa (57754) - PTW LAB B</title>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <main class="todo-app">
+    <h1>Lista TODO</h1>
+
+    <label for="search" class="visually-hidden">Wyszukaj zadanie</label>
+    <input id="search" class="search-input" type="search" placeholder="Szukaj zadania...">
+
+    <ul id="tasks" class="tasks-list" aria-live="polite"></ul>
+
+    <form id="add-task-form" class="add-task-form" novalidate>
+      <label for="task-text" class="visually-hidden">Treść zadania</label>
+      <input id="task-text" type="text" maxlength="255" placeholder="Nowe zadanie (3-255 znaków)">
+
+      <label for="task-due" class="visually-hidden">Termin zadania</label>
+      <input id="task-due" type="datetime-local">
+
+      <button type="submit">Dodaj</button>
+    </form>
+
+    <p id="form-error" class="form-error" role="alert" aria-live="assertive"></p>
+  </main>
+</body>
+</html>
