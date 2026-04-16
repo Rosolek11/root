@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jakub Rossa (57754) - PTW LAB C</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-image@0.4.0/leaflet-image.js"></script>
+    
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jakub Rossa (57754) - PTW LAB C</h1>
+        </header>
+
+        <div class="main-content">
+            <section class="map-section">
+                <h2>Mapa</h2>
+                <div id="map"></div>
+                <div class="map-controls">
+                    <button id="myLocationBtn">Moja lokalizacja</button>
+                    <button id="getMapBtn">Pobierz mapę</button>
+                </div>
+                <div id="coordinates"></div>
+            </section>
+
+            <canvas id="mapCanvas" style="display: none;"></canvas>
+
+            <section class="puzzle-section">
+                <h2>Puzzle</h2>
+                <div class="puzzle-container">
+                    <div class="puzzle-pieces">
+                        <h3>Elementy do ułożenia</h3>
+                        <div id="shuffledPieces" class="pieces-area"></div>
+                    </div>
+                    
+                    <div class="puzzle-board">
+                        <h3>Plansza do układania</h3>
+                        <div id="puzzleBoard" class="board"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
