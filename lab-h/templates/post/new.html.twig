@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nowy post{% endblock %}
+
+{% block body %}
+    <div class="mb-3">
+        <a href="{{ path('app_post_index') }}" class="btn btn-secondary">Powrót do listy</a>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">Utwórz nowy post</h1>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Tytuł *</label>
+                    <input type="text" class="form-control" id="title" name="title" required value="{{ post.title ?? '' }}">
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label">Zawartość</label>
+                    <textarea class="form-control" id="content" name="content" rows="5">{{ post.content ?? '' }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Zapisz</button>
+                <a href="{{ path('app_post_index') }}" class="btn btn-secondary">Anuluj</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
