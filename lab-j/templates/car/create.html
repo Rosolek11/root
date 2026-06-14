@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Dodaj samochód{% endblock %}
+{% block body_class %}edit{% endblock %}
+{% block content %}<h1>Dodaj samochód</h1><form method="post" class="edit-form">{% include "car/_form.html" %}</form><a href="{{ url_for('car_index') }}">Powrót do listy</a>{% endblock %}
+

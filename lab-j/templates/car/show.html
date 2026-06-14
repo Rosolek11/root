@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ car['brand'] }} {{ car['model'] }}{% endblock %}
+{% block body_class %}show{% endblock %}
+{% block content %}
+<h1>{{ car['brand'] }} {{ car['model'] }}</h1>
+<article>
+    Rok produkcji: {{ car['production_year'] }}<br>
+    Typ paliwa: {{ car['fuel_type'] }}<br>
+    Moc: {{ car['horsepower'] }} KM
+</article>
+<ul class="action-list">
+    <li><a href="{{ url_for('car_index') }}">Powrót do listy</a></li>
+    <li><a href="{{ url_for('car_edit', car_id=car['id']) }}">Edytuj</a></li>
+    <li><form method="post" action="{{ url_for('car_delete', car_id=car['id']) }}"><input type="submit" value="Usuń"></form></li>
+</ul>
+{% endblock %}
+

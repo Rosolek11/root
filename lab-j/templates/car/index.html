@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Lista samochodów{% endblock %}
+{% block body_class %}index{% endblock %}
+{% block content %}
+<h1>Lista samochodów</h1>
+<a href="{{ url_for('car_create') }}">Dodaj nowy</a>
+<ul class="index-list">
+{% for car in cars %}
+    <li>
+        <h3>{{ car['brand'] }} {{ car['model'] }}</h3>
+        <p>{{ car['production_year'] }}, {{ car['fuel_type'] }}, {{ car['horsepower'] }} KM</p>
+        <ul class="action-list">
+            <li><a href="{{ url_for('car_show', car_id=car['id']) }}">Szczegóły</a></li>
+            <li><a href="{{ url_for('car_edit', car_id=car['id']) }}">Edytuj</a></li>
+        </ul>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
+
